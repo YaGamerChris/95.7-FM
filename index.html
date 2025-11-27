@@ -3,156 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <title>Ya! FM Villahermosa - Radio en Vivo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
   <link rel="icon" href="YFV.ico" />
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #000000, #660000);
-      color: white;
-      font-family: 'Arial', serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      word-wrap: break-word;
-    }
-
-    p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-
-    audio {
-      width: 100%;
-      max-width: 600px;
-      outline: none;
-      transition: opacity 0.3s;
-    }
-
-    .info {
-      font-size: 0.9em;
-      margin-top: 20px;
-      color: #e0e0e0;
-    }
-
-    .aviso {
-      margin-top: 10px;
-      font-size: 1.2em;
-      color: #ffd700;
-      font-weight: bold;
-      display: none;
-    }
-
-    #logo {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      width: 100px;
-      max-width: 20%;
-      height: auto;
-      z-index: 1000;
-      user-select: none;
-      pointer-events: none;
-    }
-
-    #incompatibleMessage {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: #222;
-      color: #fff;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      font-size: 1.2em;
-      z-index: 9999;
-    }
-
-    #incompatibleMessage a {
-      color: #03d4a8;
-      text-decoration: none;
-      margin: 0 5px;
-      font-weight: bold;
-    }
-    #incompatibleMessage a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      font-size: 0.9em;
-      color: white;
-      opacity: 0.7;
-      user-select: none;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2em;
-      }
-      p {
-        font-size: 1em;
-      }
-      audio {
-        width: 95%;
-      }
-      #logo {
-        width: 80px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.5em;
-      }
-      p {
-        font-size: 0.9em;
-      }
-      audio {
-        width: 100%;
-      }
-      #logo {
-        width: 60px;
-      }
-      footer {
-        font-size: 0.8em;
-        bottom: 5px;
-        right: 5px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div id="incompatibleMessage">
-    <h2>Navegador no compatible</h2>
-    <p>Para una mejor experiencia, te recomendamos descargar y usar <strong>Google Chrome, Microsoft EDGE, Opera.</strong></p>
+
+  <h1>Ya! FM Villahermosa</h1>
+  <p>Estas Sintonizando 95.7 FM</p>
+
+  <audio id="radio" preload="none">
+    <source src="https://sg.centrocibernetico.com/yafmvillahermosa" type="audio/mpeg">
+  </audio>
+
+  <div class="player">
+    <button id="playBtn" class="play-btn">▶</button>
+
+    <div class="info-radio">
+      <span class="live">● EN VIVO</span>
+      <span class="title">YA! FM Villahermosa 95.7</span>
+    </div>
   </div>
 
-  <div id="contenidoPrincipal">
-    <h1>Ya! FM Villahermosa</h1>
-    <p>Estas Sintonizando 95.7 FM</p>
+  <footer>&copy; YA! FM VILLAHERMOSA 2025</footer>
 
-    <audio id="radio" controls>
-      <source src="https://sg.centrocibernetico.com/yafmvillahermosa" type="audio/mpeg">
-      Tu navegador no soporta el servidor de radio 95.7 FM.
-    </audio>
-
-  </div>
-<footer>&copy; 2025 YA! FM VILLAHERMOSA</footer>
+  <script src="script.js"></script>
 </body>
 </html>
